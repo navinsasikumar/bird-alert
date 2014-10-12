@@ -14,7 +14,7 @@ function initializeUnsecureAPI(config) {
 
     var unsecureApp = express();
 
-    unsecureApp.get('/birds/find', birdRoute.find);
+    unsecureApp.get('/birds/find/:searchTerm', birdRoute.find);
     unsecureApp.use(bodyParser());
 
     //Open a connection to the database

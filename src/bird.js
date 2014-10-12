@@ -7,12 +7,12 @@ bird.find = function (searchTerm, callback) {
 
     var mongoose = require('mongoose');
     var bird = mongoose.model('Bird');
+    var rePattern = new RegExp(searchTerm, 'i');
 
-    bird.find({ commonName: /^bald/i}, function(err, birds) {
+    bird.find({ commonName: rePattern}, function(err, birds) {
         if (err) {
             return callback(err, null);
         }
-        console.log(birds);
         return callback(false, birds);
     });
 
