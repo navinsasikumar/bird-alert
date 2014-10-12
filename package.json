@@ -4,7 +4,8 @@
     "version": "0.1.0",
     "dependencies": {
         "body-parser": "^1.6.0",
-        "express": "^4.8.0"
+        "express": "^4.8.0",
+        "jsconfig": "0.2.0"
     },
     "devDependencies": {
         "grunt": "~0.4.x",
