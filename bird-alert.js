@@ -6,8 +6,9 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 
-var birdRoute = require('./routes/bird');
 var db = require('./model/db.js');
+var birdRoute = require('./routes/bird');
+var sightingRoute = require('./routes/sighting');
 
 function initializeUnsecureAPI(config) {
     'use strict';
@@ -15,7 +16,9 @@ function initializeUnsecureAPI(config) {
     var unsecureApp = express();
 
     unsecureApp.get('/birds/find/:searchTerm', birdRoute.find);
+
     unsecureApp.use(bodyParser());
+    unsecureApp.post('/sightings/record', sightingRoute.record);
 
     //Open a connection to the database
     db.connect(config);

@@ -34,6 +34,8 @@ exports.connect = function(config) {
     });
 
     var bird = require('./../model/bird');
+    var sighting = require('./../model/sighting');
     bird.loadSchema();
+    sighting.loadSchema();
 };
 
